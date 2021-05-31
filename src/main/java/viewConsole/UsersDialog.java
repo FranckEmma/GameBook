@@ -10,18 +10,19 @@ public class UsersDialog implements IUsersDialog {
 	@Override
 	public void menuPrincipal() {
 		displayLine("1. Créer un livre");
-//		displayLine("2. Modifier un livre");
-//		displayLine("3. Vérifier un livre");
-//		displayLine("4. Afficher le graphe");
+		displayLine("2. Modifier un livre");
+		displayLine("3. Vérifier un livre");
+		displayLine("4. Afficher le graphe");
 		displayLine("5. Quitter");
 	}
 
 	public void sousMenu() {
 		displayLine("	1. Modifier le titre du livre");
 		displayLine("	2. Ajouter un nouveau paragraphe");
-		displayLine("	3. Modifier un paragraphe existant");
-		displayLine("	4. Supprimer un paragraphe");
-		displayLine("	5. Arrêter la modification\n");
+		displayLine("	3. Modifier le type d'un paragraphe existant");
+		displayLine("	4. Modifier un paragraphe existant");
+		displayLine("	5. Supprimer un paragraphe");
+		displayLine("	6. Arrêter la modification\n");
 
 	}
 
@@ -30,7 +31,7 @@ public class UsersDialog implements IUsersDialog {
 		String result = keyboard.nextLine();
 		return result;
 	}
-
+	
 	public int displayInteger(String fmt, Object... args) {
 		String intAsText = null;
 		do {
@@ -47,7 +48,7 @@ public class UsersDialog implements IUsersDialog {
 			result = readLine(chaine);
 			try {
 				result = result.toLowerCase();
-				if (!Pattern.matches("^[on]$", result))
+				if (!Pattern.matches("^[oncl]$", result))
 					display("Caractère incorrect ! ");
 				c2 = result.charAt(0);
 				valide = true;
@@ -55,7 +56,7 @@ public class UsersDialog implements IUsersDialog {
 				display("Veuillez encoder un seul caractere (O)ui/(N)on. ");
 			}
 
-		} while (!valide || !Pattern.matches("^[on]$", result));
+		} while (!valide || !Pattern.matches("^[oncl]$", result));
 		return c2;
 	}
 	@Override

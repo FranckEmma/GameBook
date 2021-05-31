@@ -1,5 +1,6 @@
 package command;
 
+import bookModelConsol.BookModel;
 import model.Book;
 import viewConsole.IUsersDialog;
 
@@ -10,9 +11,9 @@ import viewConsole.IUsersDialog;
  */
 public class AddCommandBook extends CommandBook {
 
-	private Book book;
+	private final BookModel book ;
 
-	public AddCommandBook(final Book book, final IUsersDialog userDialog) {
+	public AddCommandBook(final BookModel book , final IUsersDialog userDialog) {
 		super(1, userDialog);
 		this.book = book;
 	}
@@ -21,7 +22,7 @@ public class AddCommandBook extends CommandBook {
 	public void execute() {
 		String title = userDialog.readLine("Entrer le titre du livre ");
 		if (!title.isBlank()) {
-			if (book.getTitle().equals("defaultTitle")) {
+			if (book.getTitle().isBlank()) {
 				book.setTitle(title);
 			} else {
 				char reponse = userDialog

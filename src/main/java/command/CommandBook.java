@@ -6,6 +6,7 @@ public abstract class  CommandBook {
 
 	private int numCommand;
 	protected IUsersDialog userDialog;
+	private boolean verify = false;
 	
 	
 	public CommandBook(final int numCommand, IUsersDialog userDialog) {
@@ -21,4 +22,12 @@ public abstract class  CommandBook {
 		return this.numCommand==numCommand;
 	}
 	public abstract void execute();
+	
+	public boolean verify(boolean b) {
+		return verify= b;
+	}
+	public boolean isVerify() {
+		return verify;
+	}
+	
 }

@@ -7,7 +7,7 @@ package model;
  * @author Tamko
  *
  */
-public class Choice {
+public class Action {
 	
 	private  String text;
 
@@ -17,9 +17,16 @@ public class Choice {
 	 * @param desText text
 	 * @param choice  numero du choix
 	 */
-	public Choice(final String desText) {
+	public Action(final String desText) {
 		this.text = desText;
 //		this.number = choice;
+	}
+/**
+ * 
+ * @param action
+ */
+	public Action(final Action action) {
+		text=action.text;
 	}
 
 	/**
