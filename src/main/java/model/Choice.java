@@ -4,7 +4,7 @@ package model;
 
 /**
  * 
- * @author Tamko
+ * @author emman
  *
  */
 public class Choice {
